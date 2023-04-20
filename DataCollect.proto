@@ -16,7 +16,7 @@ service SendMovieDetails {
 }
 
 message MovieDetailList {
-  repeated MovieDetail = 1;
+  repeated MovieDetail MovieDetails= 1;
 }
 
 // The request message containing movie name and info
