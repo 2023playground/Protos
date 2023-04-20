@@ -10,6 +10,23 @@ service Greeteror {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
+// Send multiple movie detail
+service MovieDetails {
+  rpc SendMovieDetails (SendMovieDetailsReq) returns (SendMovieDetailsRes);
+}
+
+// The request message containing movie name and info
+message SendMovieDetailsReq {
+  string name = 1;
+  string info = 2;
+}
+
+// The response message containing response
+message SendMovieDetailsRes {
+  string res = 1;
+}
+
+
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
@@ -19,3 +36,5 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
+
+
