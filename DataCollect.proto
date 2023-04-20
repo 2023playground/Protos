@@ -12,7 +12,11 @@ service Greeteror {
 
 // Send multiple movie detail
 service SendMovieDetails {
-  rpc MovieDetailsReq (MovieDetail) returns (SendMovieDetailsRes);
+  rpc MovieDetailsReq (MovieDetailList) returns (SendMovieDetailsRes);
+}
+
+message MovieDetailList {
+  repeated MovieDetail = 1;
 }
 
 // The request message containing movie name and info
