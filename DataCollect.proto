@@ -11,12 +11,12 @@ service Greeteror {
 }
 
 // Send multiple movie detail
-service MovieDetails {
-  rpc SendMovieDetails (SendMovieDetailsReq) returns (SendMovieDetailsRes);
+service SendMovieDetails {
+  rpc MovieDetailsReq (MovieDetail) returns (SendMovieDetailsRes);
 }
 
 // The request message containing movie name and info
-message SendMovieDetailsReq {
+message MovieDetail {
   string name = 1;
   string info = 2;
 }
