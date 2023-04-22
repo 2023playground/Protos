@@ -4,23 +4,17 @@ option csharp_namespace = "GrpcDataCollect";
 
 package dataCollect;
 
-// The greeting service definition.
-service Greeteror {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
-}
-
 // Send multiple movie detail
-service SendMovieDetails {
-  rpc MovieDetailsReq (MovieDetailList) returns (SendMovieDetailsRes);
+service SendFilmDetails {
+  rpc FilmDetailsReq (FilmDetailList) returns (SendFilmDetailsRes);
 }
 
-message MovieDetailList {
-  repeated MovieDetail MovieDetails= 1;
+message FilmDetailList {
+  repeated FilmDetail FilmDetails= 1;
 }
 
-// The request message containing movie name and info
-message MovieDetail {
+// The request message containing Film name and info
+message FilmDetail {
   int32 id = 1;
   string FilmUrl = 2;
   string FilmName = 3;
@@ -29,19 +23,7 @@ message MovieDetail {
 }
 
 // The response message containing response
-message SendMovieDetailsRes {
+message SendFilmDetailsRes {
   string res = 1;
 }
-
-
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings.
-message HelloReply {
-  string message = 1;
-}
-
 
